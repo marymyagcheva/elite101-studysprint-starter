@@ -19,7 +19,7 @@ def run_quiz(cards, ask=input, show=print):
         else:
             show("Not quite. The answer was: " + card["answer"])
     return score
-
+"""the score is set to zero from the beggining, for every question youget right, it will count the question as correct and add a point toyour score"""
 
 def add_card(data, question, answer, category="general"):
     new_id = max((c["id"] for c in data["cards"]), default=0) + 1
