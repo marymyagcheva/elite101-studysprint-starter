@@ -13,6 +13,9 @@ def category_report(data):
     # TODO(ticket): tally each card into a {category: count} dict and return it.
     # For now this returns an empty report so the menu never crashes.
     report = {}
+    for card in data["cards"]:
+        name = card["category"]
+        report[name] = report.get(name, 0) + 1
     return report
 
 
@@ -26,3 +29,5 @@ def average_score(data):
     if not history:
         return 0.0
     return round(sum(history) / len(history), 1)
+
+
